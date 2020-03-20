@@ -1,0 +1,20 @@
+This program is tools to simplify the appearance of URLs written in
+a buffer.  After evaluating `shorten-url-region' and
+`shorten-url-narrow', try running `shorten-url-narrow' on the
+following line.
+
+https://example.com/hogehoge.whowhowho/EXAMPLE
+
+The appearance of the URL changes as follows.
+
+example.com/...XAMPLE
+
+You can shorten all URLs in the current buffer with
+`shorten-all-url-buffer'.  If you always want to shorten URLs in a
+minor mode, add `shorten-all-url-buffer' to that minor mode hook.
+
+`tinyurl' developed by Jari Aalto is a program that has similar
+functions to this program. It is huge and multifunctional than this
+program.  (GitHub page:
+https://github.com/jaalto/project--emacs-tiny-tools/blob/devel/lisp/tiny/tinyurl.el,
+Emacs Wiki: https://www.emacswiki.org/emacs/TinyUrl)
