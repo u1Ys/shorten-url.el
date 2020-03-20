@@ -30,13 +30,11 @@ changes `https://example.com/hogehoge.whowhowho/EXAMPLE' to
 `example.com/...XAMPLE'"
   (interactive "r")
   (let*
-      (
-       (o (make-overlay begin end))
+      ((o (make-overlay begin end))
        (str (buffer-substring-no-properties begin end))
        (m (string-match "http[s]?://[www\\.]*\\([^/]*\\).*\\(......\\)" str))
        (head (match-string 1 str))
-       (tail (match-string 2 str))
-       )
+       (tail (match-string 2 str)))
     (if m (progn
 	    (overlay-put o 'invisible t)
 	    (overlay-put o 'before-string (propertize (concat head "/..." tail)
