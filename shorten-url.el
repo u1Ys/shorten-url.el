@@ -37,10 +37,13 @@ changes `https://example.com/hogehoge.whowhowho/EXAMPLE' to
        (head (match-string 1 str))
        (tail (match-string 2 str))
        )
-    (overlay-put o 'invisible t)
-    (overlay-put o 'before-string (propertize (concat head "/..." tail) 'face 'link))
-    (overlay-put o 'evaporate t)
-    (overlay-put o 'isearch-open-invisible t)
+    (if m (progn
+	    (overlay-put o 'invisible t)
+	    (overlay-put o 'before-string (propertize (concat head "/..." tail)
+						      'face 'link))
+	    (overlay-put o 'evaporate t)
+	    (overlay-put o 'isearch-open-invisible t)
+	    ))
     )
   )
 
